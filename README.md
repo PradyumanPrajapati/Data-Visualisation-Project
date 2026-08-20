@@ -57,6 +57,11 @@ A choropleth map showing bed days per case by state. NT has the highest bed-day 
 - [AIHW injury context](https://www.aihw.gov.au/reports/injury/injury-in-australia/contents/ranked-causes)
 
 ---
+## Data Pipeline
+
+Raw BITRE hospitalised injury data (Excel) was cleaned and reshaped into the three CSVs used here via a KNIME workflow filtering to relevant fields, standardising state naming, and computing bed-days-per-case for the severity chapter.
+
+---
 
 ## Tech Stack
 
