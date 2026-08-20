@@ -20,14 +20,17 @@ A scrollable, D3-powered data story built around Australian road crash hospitali
 
 ### Chapter 1 — Trend
 *Not every state is getting safer.*
+
 A line chart tracking hospitalised injuries by state over time. NSW and Victoria lead in volume but show real declines. NT and WA show a decade of little to no improvement, a pattern a national average completely erases.
 
 ### Chapter 2 — Comparison
 *Who gets hurt depends on where you live.*
+
 A grouped bar chart comparing car occupants against vulnerable road users (motorcyclists, cyclists, pedestrians) by state, with a toggle between grouped and individual road-user views. Remote states like NT show a much higher share of vulnerable road users than urban-dominated national figures suggest.
 
 ### Chapter 3 — Severity
 *High case counts aren't the whole story.*
+
 A choropleth map showing bed days per case by state. NT has the highest bed-day burden per case of any jurisdiction, despite not having the highest case volume, which matters a lot for how funding gets allocated.
 
 ---
