@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Jurisdictional Safety Gap</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Syne:wght@400;500;600&display=swap" />
+
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- Background -->
+		<div class="backdrop" aria-hidden="true"></div>
+
+		<!-- Hero Section -->
+		<header class="hero">
+			<div class="wrap">
+				<p class="eyebrow">2026 Data Visualisation Project</p>
+				<h1>Jurisdictional Safety Gap</h1>
+				<p class="lede">
+					Why a national road safety strategy fails if it is not state-specific.
+				</p>
+
+				<!-- Three summary cards: audience, dataset, core claim -->
+				<div class="hero-grid">
+					<div class="card">
+						<h3>Audience</h3>
+						<p>Federal and State Infrastructure planners</p>
+					</div>
+					<div class="card">
+						<h3>Dataset</h3>
+						<p>BITRE hospitalised road crash injuries, 2011-2021</p>
+					</div>
+					<div class="card">
+						<h3>Core claim</h3>
+						<p>National averages hide distinct state trauma profiles</p>
+					</div>
+				</div>
+
+				<!-- Data Note -->
+				<div class="callout">
+					<strong>Data note:</strong>
+					Counts are not population adjusted larger states will naturally show higher numbers. Secondly,
+					Victoria (from 2012) and NSW (from 2017) changed how they count hospital admissions,
+					so sudden drops in those years reflect a method change, not a real improvement.
+				</div>
+			</div>
+		</header>
+
+		<main class="wrap">
+
+			<!-- Global filters -->
+			<section class="filter-panel reveal" style="--delay: 0.05s">
+				<div class="filter-card">
+					<div class="filter-header">
+						<div>
+							<p class="chapter-eyebrow">Global filters</p>
+							<h2>Focus the story by State and Year</h2>
+							<p class="caption">
+								Year range updates the trend and severity chapters.
+							</p>
+						</div>
+						<div class="filter-actions">
+							<button class="ghost" id="state-select-all" type="button">
+								Select all States
+							</button>
+							<button class="ghost" id="year-reset" type="button">
+								Reset Years
+							</button>
+						</div>
+					</div>
+					<div class="filter-grid">
+						<!-- State checkboxes injected by main.js -->
+						<div class="filter-block">
+							<h3>
+								States and Territories
+								<span
+									class="hint-pill"
+									data-tooltip="Toggle states to focus the story. This filter updates every chart."
+									aria-label="Toggle states to focus the story. This filter updates every chart."
+								>
+									<img src="assets/filter_hint_logo.png" alt="" class="hint-icon" aria-hidden="true" />
+								</span>
+							</h3>
+							<div id="state-filters" class="state-filters"></div>
+						</div>
+
+						<!-- Dual year sliders -->
+						<div class="filter-block">
+							<h3>
+								Year Range
+								<span
+									class="hint-pill"
+									data-tooltip="Drag both sliders to set a start and end year for the trend and severity charts."
+									aria-label="Drag both sliders to set a start and end year for the trend and severity charts."
+								>
+									<img src="assets/filter_hint_logo.png" alt="" class="hint-icon" aria-hidden="true" />
+								</span>
+							</h3>
+							<div class="year-range">
+								<div class="year-label">
+									<span id="year-label">2011-2021</span>
+								</div>
+								<div class="range-inputs">
+									<input type="range" id="year-start" min="2011" max="2021" value="2011" step="1" />
+									<input type="range" id="year-end" min="2011" max="2021" value="2021" step="1" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── Chapter 1 ── -->
+			<!-- Trend line chart: hospitalised injuries per state over time -->
+			<section class="chapter reveal" style="--delay: 0.1s">
+				<div class="chapter-text">
+					<p class="chapter-eyebrow">Chapter 1 — Trend</p>
+					<h2>Not every State is getting safer</h2>
+					<p class="desc">
+						The national headline of fewer hospitalisations over time masks a split reality.
+						Some states have made consistent gains. Others have flatlined or worsened.
+					</p>
+					<p class="desc">
+						NSW and Vic lead in volume but have shown meaningful decline.
+						NT and WA tell a different story their lines resist improvement decade-long. This is why
+						a national strategy averaged across all states would never flag them.
+					</p>
+					<p class="caption">
+						Tip: Click a line or legend button to isolate a state. Click again to bring it back.
+					</p>
+				</div>
+				<div class="viz">
+					<div class="viz-header">
+						<h3>Hospitalised Injuries by State</h3>
+						<div class="legend" id="trend-legend"></div>
+					</div>
+					<div id="trend-chart" class="chart" aria-label="Trend chart"></div>
+					<div class="chart-footer">
+						<button class="ghost" id="trend-reset" type="button">Reset States</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- ── Chapter 2 ── -->
+			<!-- Grouped bar chart: road user type breakdown by state -->
+			<section class="chapter reveal" style="--delay: 0.2s">
+				<div class="chapter-text">
+					<p class="chapter-eyebrow">Chapter 2 — Comparison</p>
+					<h2>Who gets hurt depends on where you live</h2>
+					<p class="desc">
+						Car occupants account for the majority of hospitalisations everywhere
+						but the mix of <em><strong>who else</strong></em> gets hurt shifts dramatically by jurisdiction.
+					</p>
+					<p class="desc">
+						Remote-area states like NT show a far higher share of motorcyclists
+						and pedestrians relative to their total. This is a profile that is almost invisible
+						in national figures dominated by NSW and Vic. A speed or seatbelt campaign
+						designed for urban roads simply does not address that risk.
+					</p>
+					<p class="caption">
+						Tip: in Individual view, click legend pills to show or hide specific road user types.
+					</p>
+				</div>
+				<div class="viz">
+					<h3>Car Occupants vs Vulnerable Road Users by State</h3>
+					<div class="viz-header">
+						<div id="viz2_toggle" class="viz2_toggle">
+							<button type="button" data-mode="grouped">Grouped view</button>
+							<button type="button" data-mode="individual">Individual view</button>
+						</div>
+		
+						<div class="legend" id="compare-legend"></div>
+					</div>
+					<div id="compare-chart" class="chart" aria-label="Comparison chart"></div>
+					<div class="chart-footer">
+						<button class="ghost" id="compare-reset" type="button">Reset Filters</button>
+					</div>
+					<p class="caption">
+						Vulnerable road users are defined as Motorcyclists, Pedal Cyclists, and Pedestrians only.
+					</p>
+				</div>
+			</section>
+
+			<!-- ── Chapter 3 ── -->
+			<!-- Severity map: bed days per case by state -->
+			<section class="chapter reveal" style="--delay: 0.3s">
+				<div class="chapter-text">
+					<p class="chapter-eyebrow">Chapter 3 — Severity</p>
+					<h2>High case counts are not the whole story</h2>
+					<p class="desc">
+						Volume alone does not capture burden. A state with fewer crashes can still
+						consume disproportionate hospital resources if those injuries are more severe.
+					</p>
+					<p class="desc">
+						NT records the highest bed days per case of any jurisdiction. That means
+						each crash demands more from the health system than anywhere else in Australia.
+						Funding allocation based on case counts alone would systematically
+						under-resource exactly the states that need it most.
+					</p>
+					<p class="caption">
+						Tip: Click a state on the map to highlight it.
+					</p>
+				</div>
+				<div class="viz">
+					<div class="viz-header" id="severity-chart-header">
+						<h3>Hospital Bed Days per case by State</h3>						
+						<span
+							class="hint-pill"
+							data-tooltip="Global Year filter does not apply to this chart. It always shows full 2011–2021 data"
+							aria-label="Gloabl Year filter does not apply to this chart. It always shows full 2011–2021 data"
+						>
+							<img src="assets/filter_hint_logo.png" alt="" class="hint-icon" aria-hidden="true" />
+						</span>
+					</div>
+					<!-- Chart container: D3 renders SVG inside here -->
+					<div id="severity-chart" class="chart" aria-label="Severity chart"></div>
+					<div class="chart-footer" id="severity-chart-footer">
+						<button class="ghost" id="severity-reset" type="button">Reset map</button>
+					</div>
+					<p class="caption">
+						Colour intensity shows bed days per case.
+					</p>
+				</div>
+			</section>
+
+			<!-- ── Method ── -->
+			<!-- Sources, limitations, and external links -->
+			<section class="chapter reveal" style="--delay: 0.4s">
+				<div class="chapter-text">
+					<p class="chapter-eyebrow">Method</p>
+					<h2>Sources and Limitations</h2>
+					<ul class="notes">
+						<li>Source data: BITRE hospitalised injuries from road crashes, 2011–2021.</li>
+						<li>This demo visualises a subset of the available dataset across three story chapters.</li>
+						<li>Raw counts are used without population normalisation smaller jurisdictions may appear lower even when per-capita rates are high.</li>
+						<li>Victoria (from 2012) and NSW (from 2017) changed how they count hospital admissions. Sudden drops around those years reflect a method change, not a real improvement in road safety.</li>
+					</ul>
+				</div>
+				<div class="links">
+					<a href="https://www.bitre.gov.au/publications/ongoing/hospitalised-injury" target="_blank" rel="noopener noreferrer">BITRE Data Portal</a>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWQ0NTQ3ZDMtYWM1ZS00ZTNhLTlmZmMtZWY1MWFjOWNjODc5IiwidCI6ImFhMjFiNjQwLWJhYzItNDU2ZC04NTA1LWYyY2MwN2Y1MTc4NCJ9" target="_blank" rel="noopener noreferrer">Reference dashboard</a>
+					<a href="https://www.aihw.gov.au/reports/injury/injury-in-australia/contents/ranked-causes" target="_blank" rel="noopener noreferrer">AIHW injury context</a>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="wrap">
+				<p>Demo story built with D3.</p>
+				<p>By: Pradyuman Prajapati</p>
+			</div>
+		</footer>
+
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="js/sharedConstants.js"></script>
+		<script src="js/Viz1_Trend.js"></script>
+		<script src="js/Viz2_GroupedBarChart.js"></script>
+		<script src="js/Viz3_map.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

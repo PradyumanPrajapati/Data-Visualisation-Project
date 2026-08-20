@@ -1,0 +1,65 @@
+"road user","state or territory (#1)","Sum(count of cases excluding died in hospitals within 30 days (#1))"
+"Bus occupant","ACT",12
+"Bus occupant","NSW",992
+"Bus occupant","NT",17
+"Bus occupant","Qld",393
+"Bus occupant","SA",141
+"Bus occupant","Tas",
+"Bus occupant","Vic",581
+"Bus occupant","WA",228
+"Car driver, passenger or unknown position","ACT",2684
+"Car driver, passenger or unknown position","NSW",54433
+"Car driver, passenger or unknown position","NT",3685
+"Car driver, passenger or unknown position","Qld",45996
+"Car driver, passenger or unknown position","SA",12781
+"Car driver, passenger or unknown position","Tas",3466
+"Car driver, passenger or unknown position","Vic",54250
+"Car driver, passenger or unknown position","WA",15921
+"Heavy transport driver, passenger or unknown position","ACT",6
+"Heavy transport driver, passenger or unknown position","NSW",1524
+"Heavy transport driver, passenger or unknown position","NT",30
+"Heavy transport driver, passenger or unknown position","Qld",1715
+"Heavy transport driver, passenger or unknown position","SA",325
+"Heavy transport driver, passenger or unknown position","Tas",38
+"Heavy transport driver, passenger or unknown position","Vic",1329
+"Heavy transport driver, passenger or unknown position","WA",443
+"Motorcyclist","ACT",1521
+"Motorcyclist","NSW",27358
+"Motorcyclist","NT",1638
+"Motorcyclist","Qld",23872
+"Motorcyclist","SA",5809
+"Motorcyclist","Tas",1852
+"Motorcyclist","Vic",19313
+"Motorcyclist","WA",9679
+"Other or unknown","ACT",42
+"Other or unknown","NSW",1631
+"Other or unknown","NT",107
+"Other or unknown","Qld",1494
+"Other or unknown","SA",383
+"Other or unknown","Tas",103
+"Other or unknown","Vic",1526
+"Other or unknown","WA",775
+"Pedal cyclist","ACT",2314
+"Pedal cyclist","NSW",19601
+"Pedal cyclist","NT",822
+"Pedal cyclist","Qld",15152
+"Pedal cyclist","SA",5379
+"Pedal cyclist","Tas",1146
+"Pedal cyclist","Vic",22309
+"Pedal cyclist","WA",7297
+"Pedestrian","ACT",281
+"Pedestrian","NSW",9749
+"Pedestrian","NT",630
+"Pedestrian","Qld",4688
+"Pedestrian","SA",1740
+"Pedestrian","Tas",488
+"Pedestrian","Vic",7901
+"Pedestrian","WA",2329
+"Pick-up truck or van occupant","ACT",
+"Pick-up truck or van occupant","NSW",772
+"Pick-up truck or van occupant","NT",67
+"Pick-up truck or van occupant","Qld",657
+"Pick-up truck or van occupant","SA",172
+"Pick-up truck or van occupant","Tas",30
+"Pick-up truck or van occupant","Vic",733
+"Pick-up truck or van occupant","WA",293
